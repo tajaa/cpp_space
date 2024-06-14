@@ -12,10 +12,11 @@ int main() {
   SetTargetFPS(60);
 
   Game game;
-  Laser laser = Laser({100, 100}, 7);
+  Laser laser = Laser({100, 100}, (-1));
 
   while (WindowShouldClose() == false) {
     game.HandleInput();
+    laser.Update();
 
     BeginDrawing();
     ClearBackground(grey);
