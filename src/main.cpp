@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "laser.hpp"
 #include <raylib.h>
 
 int main() {
@@ -11,6 +12,7 @@ int main() {
   SetTargetFPS(60);
 
   Game game;
+  Laser laser = Laser({100, 100}, 7);
 
   while (WindowShouldClose() == false) {
     game.HandleInput();
@@ -18,6 +20,7 @@ int main() {
     BeginDrawing();
     ClearBackground(grey);
     game.Draw();
+    laser.Draw();
 
     EndDrawing();
   }
